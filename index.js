@@ -40,10 +40,13 @@ function addMember() {
     }])
     .then(function({name, role, id, email}) {
         let roleInfo = "";
+        // if Enginner github username will be asked
         if (role === "Engineer") {
             roleInfo = "GitHub username";
+        // if Intern school name will be asked
         } else if (role === "Intern") {
             roleInfo = "school name";
+        // if Manager a office phone number will be asked
         } else {
             roleInfo = "office phone number";
         }
