@@ -156,11 +156,11 @@ function addHtml(member) {
 }
 
 function finishHtml() {
-    const html = ` </section>
-    </section>
+//     const html = ` </section>
+//     </section>
     
-</body>
-</html>`;
+// </body>
+// </html>`;
 
     fs.appendFile("./dist/team.html", html, function (err) {
         if (err) {
