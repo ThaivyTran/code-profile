@@ -1,3 +1,4 @@
+// files needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Engineer = require("./lib/Engineer");
@@ -6,12 +7,15 @@ const Manager = require("./lib/Manager");
 
 const employees = [];
 
+// runs application
 function initApp() {
     startHtml();
     addMember();
 }
 
+// add team member
 function addMember() {
+    // array of questions for user input
     inquirer.prompt([{
         message: "Enter team member's name",
         name: "name"
@@ -79,6 +83,7 @@ function addMember() {
     });
 }
 
+// add beginning html codes to ./dist/team.html
 function startHtml() {
     const html = `<!DOCTYPE html>
     <html lang="en">
@@ -155,11 +160,12 @@ function addHtml(member) {
     });
 }
 
+// add the end code of html
 function finishHtml() {
     const html = `
 </body>
 </html>`;
-
+    // Append data to ./dist/team.html
     fs.appendFile("./dist/team.html", html, function (err) {
         if (err) {
             console.log(err);
